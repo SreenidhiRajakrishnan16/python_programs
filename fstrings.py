@@ -80,3 +80,14 @@ print(status)
 status = f"User: {f'{name.upper()} ({age})'}"
 print(status)
 # Output: User: ALICE (30)
+
+
+format_template = "Hello {name}"
+fstring_template = f"Hello {name_new}" #error
+# Note: fstring requires the name_new to already be defined which means it can't be reused as a template dynamically
+# Note: format can take the value only during run time which makes it dynamic and practical for real time interpolation
+print(fstring_template)
+
+input_name = input("Enter Name:")
+print(format_template.format(name=input_name))
+
