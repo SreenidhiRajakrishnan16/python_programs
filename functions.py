@@ -31,18 +31,18 @@ def find_even_between_range(end, start):
     return even_nums
 
 def find_even_between_multi_range(**kwargs):
-    outer_even_numbs = list()
-    for start, end in kwargs.items():
-        even_nums = []
-        for i in range(start, end):
-            if(i%2 == 0):
-                even_nums.append(i)
-        # print(even_nums)
-        outer_even_numbs.insert(kwargs.keys().index(start))
-    print(outer_even_numbs)
-    return outer_even_numbs
+    start = kwargs['start'] if 'start' in kwargs.keys() else 10
+    end = kwargs['end'] if 'end' in kwargs.keys() else start+10
+    print(start, end)
+    even_nums = []
+    for i in range(start, end):
+        if(i%2 == 0):
+            even_nums.append(i)
+    print(even_nums)
+    return even_nums
 
 find_even(10)
 any_number_of_args_find_even(10, 20)
 find_even_between_range(start=10, end=20)
-find_even_between_multi_range(start=10, end=20, start1=40,end1=55)
+find_even_between_multi_range(start=10)
+find_even_between_multi_range(start=40, end=70)
