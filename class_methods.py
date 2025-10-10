@@ -28,3 +28,17 @@ print(f'{"Class Method Print Statements":^50}')
 c1.print_wheels()
 print(f'{"Static Method Print Statements":^50}')
 c1.print_generic_details()
+
+Car.print_details_of_inst(c1)
+Car.print_wheels()
+print(Car.__dict__)
+
+from selenium import webdriver
+
+# Case 1: Script ends immediately
+driver = webdriver.Chrome()
+driver.get("https://google.com")
+# Browser will close when script ends
+
+# Case 2: Keeping script alive
+input("Press Enter to exit...")
